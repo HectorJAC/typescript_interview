@@ -10,19 +10,18 @@ const escalera = (n: number):any => {
     }
     
     let result:number = 0;
-    let previous:number = 1;
-    let previous2:number = 1;
+    let previousNumber:number = 1;
+    let previousNumber2:number = 1;
 
     if (n > 0) {
-    for (let i = 2; i <= n; i++) {
-        result = previous + previous2;
-        previous2 = previous;
-        previous = result;
-    }
+        for (let i = 2; i <= n; i++) {
+            result = previousNumber + previousNumber2;
+            previousNumber2 = previousNumber;
+            previousNumber = result;
+        }
     } else {
         return "No se aceptan numeros negativos"
     }
-    
     return result;
 };
 
