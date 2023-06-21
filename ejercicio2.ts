@@ -3,7 +3,7 @@
     y el caracter s. Puede suponer que el caracter c aparece al menos una vez en la cadena.
 */
 
-const distanciaEntreCaracteres = (s: string, c: string): number[] => {
+const distanceBetweenCharacters = (s: string, c: string): number[] => {
     let result: number[] = [];
     let previousPosition: number = 0;
     let nextPosition:number = 0;
@@ -36,4 +36,4 @@ const distanciaEntreCaracteres = (s: string, c: string): number[] => {
 
 console.log('Ejercicio 2');
 console.log('Cadena de caracteres: helloworld');
-console.log(distanciaEntreCaracteres('helloworld', 'l'));
+console.log(distanceBetweenCharacters('helloworld', 'l'));

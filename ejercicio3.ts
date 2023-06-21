@@ -11,16 +11,16 @@ const minLenSubArray = (array: number[], num: number): any => { // Funcion que r
 
     if (array.every((x) => x >= 0) && num >= 0) {
         // every devuelve true si todos los elementos del arreglo cumplen con la condicion que se le pasa en el callback
-        while (inicialPosition < array.length) { // Para incializar el ciclo el numero de inicio debe ser menor a la longitud del arreglo
-            if (sum < num && finalPosition < array.length) { // Si la suma de los numeros continuos del arreglo es menor al numero y la variable fin es menor a la longitud del arreglo
+        while (inicialPosition < array.length) {
+            if (sum < num && finalPosition < array.length) {
                 sum += array[finalPosition]; // Se acumula la suma de los numeros del arreglo
                 finalPosition++; // Se mueve una posocion del arreglo la variable fin
-            } else if (sum >= num) { // Si la suma de los numeros continuos del arreglo es mayor o igual al numero
+            } else if (sum >= num) {
                 minLong = Math.min(minLong, finalPosition - inicialPosition); // Se compara el valor minimo con la resta de la variable fin menos la variable inicio
                 sum -= array[inicialPosition]; // Se resta el numero de la posicion inicio al acumulado
                 inicialPosition++; // Se mueve una posicion del arreglo la variable inicio
             } else {
-                break; // Si no se cumple ninguna de las condiciones anteriores se rompe el ciclo
+                break;
             }
         }
         if (minLong == 999999) {
@@ -31,12 +31,12 @@ const minLenSubArray = (array: number[], num: number): any => { // Funcion que r
             return minLong; 
         }
     } else {
-        return 'Solo se permiten numeros';
+        return 'Solo se permiten numeros positivos';
     };
 };
 
-const listOfNumbers:number[] = [1, 1, 3];
-const num:number = 3;
+const listOfNumbers:number[] = [2, 1, 5, 2, 8];
+const num:number = 7;
 
 console.log('Ejericio 3');
 console.log(`Arreglo: [${listOfNumbers}] || Numero: ${num}`);

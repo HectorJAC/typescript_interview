@@ -4,7 +4,7 @@
     El orden importa.
 */
 
-const escalera = (n: number):any => {
+const stairway = (n: number):any => {
     if (n === 1 || n === 0) {
         return 1;
     }
@@ -26,11 +26,10 @@ const escalera = (n: number):any => {
 };
 
 console.log('Ejercicio 1 - Primera parte');
-console.log(escalera(4));
+console.log(stairway(4));
 
 /*
     ¿Que pasaria si, en lugar de poder subir 1 o 2 escalones a la vez, pudieras subir cualquier numero de escalones de una lista?
     de un conjunto de enteros positivos X? Por ejemplo, si X = [1, 3, 5], podrias subir 1, 3 o 5 escalones a la vez.
 */
-
 
