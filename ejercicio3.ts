@@ -11,28 +11,28 @@ const minLenSubArray = (array: number[], num: number): any => { // Funcion que r
 
     if (array.every((x) => x >= 0) && num >= 0) {
         // every devuelve true si todos los elementos del arreglo cumplen con la condicion que se le pasa en el callback
-        while (inicialPosition < array.length) {
-            if (sum < num && finalPosition < array.length) {
-                sum += array[finalPosition]; // Se acumula la suma de los numeros del arreglo
-                finalPosition++; // Se mueve una posocion del arreglo la variable fin
-            } else if (sum >= num) {
-                minLong = Math.min(minLong, finalPosition - inicialPosition); // Se compara el valor minimo con la resta de la variable fin menos la variable inicio
-                sum -= array[inicialPosition]; // Se resta el numero de la posicion inicio al acumulado
-                inicialPosition++; // Se mueve una posicion del arreglo la variable inicio
-            } else {
-                break;
-            }
-        }
-        if (minLong == 999999) {
-            // Si no se encontro un subarreglo que cumpla con la condicion se imprime 0
-            return 0; 
-        } else {
-            // Se imprime la longitud minima del subarreglo que sea mayor o igual al numero dado
-            return minLong; 
-        }
-    } else {
-        return 'Solo se permiten numeros positivos';
+        return "Solo se permiten numeros positivos";
     };
+     
+    while (inicialPosition < array.length) {
+        if (sum < num && finalPosition < array.length) {
+            sum += array[finalPosition]; // Se acumula la suma de los numeros del arreglo
+            finalPosition++; // Se mueve una posocion del arreglo la variable fin
+        } else if (sum >= num) {
+            minLong = Math.min(minLong, finalPosition - inicialPosition); // Se compara el valor minimo con la resta de la variable fin menos la variable inicio
+            sum -= array[inicialPosition]; // Se resta el numero de la posicion inicio al acumulado
+            inicialPosition++; // Se mueve una posicion del arreglo la variable inicio
+        } else {
+            break;
+        }
+    }
+    if (minLong == 999999) {
+        // Si no se encontro un subarreglo que cumpla con la condicion se imprime 0
+        return 0; 
+    } else {
+        // Se imprime la longitud minima del subarreglo que sea mayor o igual al numero dado
+        return minLong; 
+    }
 };
 
 const listOfNumbers:number[] = [2, 1, 5, 2, 8];
